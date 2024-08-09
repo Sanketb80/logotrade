@@ -61,9 +61,9 @@ const Admin = () => {
           .replace(/^.+,/, "");
         encodedImageBytes = base64String;
         const data = {
-          image_bytes: encodedImageBytes ? encodedImageBytes : null,
-          image_text: imageText || null,
-          image_class: 2,
+          image_bytes: encodedImageBytes ? encodedImageBytes : null
+          // image_text: imageText || null,
+          // image_class: 2,
         };
 
         try {
