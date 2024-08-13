@@ -23,6 +23,9 @@ const Admin1 = () => {
     const [options, setOptions] = useState([]);
     const [selectedClasses, setSelectedClasses] = useState([]);
 
+    const [currentPage, setCurrentPage] = useState(1);
+    const imagesPerPage = 16;
+
     const handleImageHover = (image1) => {
         setHoveredImage(image1);
         
@@ -349,6 +352,20 @@ const Admin1 = () => {
 
 
 
+
+    const totalPages = Math.ceil(imageData.length / imagesPerPage);
+
+    // Get current images
+    const indexOfLastImage = currentPage * imagesPerPage;
+    const indexOfFirstImage = indexOfLastImage - imagesPerPage;
+    const currentImages = imageData.slice(indexOfFirstImage, indexOfLastImage);
+
+    // Change page
+    const paginate = (pageNumber) => setCurrentPage(pageNumber);
+
+
+
+
     return (
 
         <div className="main-container">
@@ -360,8 +377,8 @@ const Admin1 = () => {
 
             </nav>
 
-            <main className="content1">
-
+            <main className="content2">
+                <div className="content1">
                 <div className="div45">
                     <div className="div46">
                         <div className="image45">
@@ -395,17 +412,18 @@ const Admin1 = () => {
                                     <div className="div53">
                                         <img className="logo2" src={image} alt="Logo" />
                                     </div>)}
-                                <div className="div54">
+                                
+                                <div className="div55">
+                                    <img className="logo3" src="image/cross.png" onClick={closeModal1}></img>
+                                </div>
+                            </div>
+                            <div className="div54">
                                     <div className="text51">{fileName}</div>
                                     {!hasResponse && (
                                     <div className="text52">Uploading</div>)}
                                     {hasResponse && (
                                     <div className="text52">Uploaded</div>)}
                                 </div>
-                                <div className="div55">
-                                    <img className="logo3" src="image/cross.png" onClick={closeModal1}></img>
-                                </div>
-                            </div>
                             <div className="div52">
                                 <div style={{
                                     width: "100%",
@@ -425,6 +443,7 @@ const Admin1 = () => {
                                         }}
                                     />
                                 </div></div>
+                                
                         </div>)}
                     {isFileUploaded && (
                         <button className="button47" onClick={searchClick}>Search</button>)}
@@ -440,7 +459,7 @@ const Admin1 = () => {
                         </div>
                     </div>
                     <div><div className="imageprev">
-                        {imageData.map((data, index) => (
+                        {currentImages.map((data, index) => (
                             <div
                                 key={index}
                                 className="imgbox"
@@ -451,11 +470,37 @@ const Admin1 = () => {
                             </div>
                         ))}
                     </div></div>
+                    <div className="pagination">
+                            <button
+                                onClick={() => paginate(currentPage - 1)}
+                                disabled={currentPage === 1}
+                            >
+                                Previous
+                            </button>
+                            {[...Array(totalPages)].map((_, index) => (
+                                <button
+                                    key={index}
+                                    onClick={() => paginate(index + 1)}
+                                    className={currentPage === index + 1 ? "active" : ""}
+                                >
+                                    {index + 1}
+                                </button>
+                            ))}
+                            <button
+                                onClick={() => paginate(currentPage + 1)}
+                                disabled={currentPage === totalPages}
+                            >
+                                Next
+                            </button>
+                        </div>
+                    
 
                 </div>)}
+                </div>
+                <div className="footer">Powerd by &nbsp; <a href="https://vsndirect.com">VSN International Pvt. Ltd.</a></div>
 
 
-
+                        
 
 
             </main>

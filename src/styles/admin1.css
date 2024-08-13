@@ -1,9 +1,17 @@
 .content1{
     width: 100%;
-    height: calc(100vh - 70px);
+    height: calc(100vh - 95px);
     background-color: #f4f4f4;
     display: flex;
     flex-direction: row;
+
+}
+.content2{
+    width: 100%;
+    height: calc(100vh - 70px);
+    background-color: #f4f4f4;
+    display: flex;
+    flex-direction: column;
 
 }
 
@@ -24,7 +32,8 @@
     width: 40px;
 }
 .logo2{
-    width: 100%;
+    width: 80%;
+    height: 100%;
 }
 .div47{
     width: 80%;
@@ -50,7 +59,7 @@
 
 .div50{
     padding: 10px 10px;
-    height: 170px;
+    height: 270px;
     width: 100%;
     border-width: 1px;
     border-style: solid;
@@ -61,7 +70,7 @@
     flex-direction: column;
 }
 .div51{
-    height: 89%;
+    height: 70%;
     display: flex;
     flex-direction: row;
 }
@@ -71,7 +80,7 @@
     
 }
 .div53{
-    width:39%;
+    width:90%;
 }
 .div54{
     width:54%;
@@ -105,3 +114,59 @@
 
 
 
+
+
+
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    gap: 10px;
+}
+
+.pagination button {
+    background-color: #f0f0f0;
+    color: #333;
+    border: none;
+    padding: 8px 12px;
+    margin: 0 5px;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 4px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.pagination button:hover {
+    background-color: #4a90e2;
+    color: white;
+}
+
+.pagination button:disabled {
+    background-color: #e0e0e0;
+    color: #999;
+    cursor: not-allowed;
+}
+
+.pagination .active {
+    background-color: #4a90e2;
+    color: white;
+    font-weight: bold;
+}
+
+.pagination span {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+
+.footer{
+    background-color: #B4D4B3;
+    height: 25px;
+    font-size: 14px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
