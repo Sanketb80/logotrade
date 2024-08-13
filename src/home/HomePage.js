@@ -29,7 +29,7 @@ const HomePage = () => {
     <Fragment>
       <div className="main-box">
         <div className="button-box">
-          <button className="admin-button " onClick={() => handleSubmit("/admin")}>
+          <button className="admin-button " onClick={() => handleSubmit("/admin1")}>
 
             {adminLoader ? (
               <i class="fa fa-spinner fa-spin spinner-icons"></i>
@@ -37,7 +37,7 @@ const HomePage = () => {
               " Admin"
             )}
           </button>
-          <button className="user-button " onClick={() => handleSubmit("/dash")}>
+          <button className="user-button " onClick={() => handleSubmit("/user1")}>
             {userLoader ? (
               <i class="fa fa-spinner fa-spin spinner-icons"></i>
             ) : (
