@@ -12,7 +12,7 @@ const HomePage = () => {
 
   const router = useRouter();
   const handleSubmit = (link) => {
-    if (link == "/dash") {
+    if (link == "/user1") {
       setUserLoader(true);
     } else {
       setAdminLoader(true);
