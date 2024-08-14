@@ -418,7 +418,7 @@ const user1 = () => {
                                 </div>
                             </div>
                             <div className="div54">
-                                    <div className="text51">{fileName}</div>
+                                    {/* <div className="text51">{fileName}</div> */}
                                     {!hasResponse && (
                                     <div className="text52">Uploading</div>)}
                                     {hasResponse && (
@@ -463,7 +463,7 @@ const user1 = () => {
                             <div
                                 key={index}
                                 className="imgbox"
-                                
+                               
                             >
                                 <img src={data.image} alt={data.title} className="card-image" />
                                 <p>{data.title}</p>
